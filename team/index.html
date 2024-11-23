@@ -1,13 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>asdoadan</title>
+    <title>Login Page</title>
+    <style>
+        /* Styling untuk keseluruhan halaman */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Styling untuk kotak login */
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Styling untuk judul */
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Styling untuk input form */
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Styling untuk tombol login */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling untuk footer */
+        .footer {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>asdoadan</h1>
-    <script src="script.js"></script>
-    <h1>ini adalah naik anjing aja sana </h1>
+    <div class="login-container">
+        <h2>Login to Your Account</h2>
+        <form id="login-form">
+            <input type="text" class="input-field" id="username" placeholder="Username" required>
+            <input type="password" class="input-field" id="password" placeholder="Password" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="footer">
+            <p>Don't have an account? <a href="#">Sign up here</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menangani form login
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Cek apakah username dan password valid (contoh sederhana)
+            if (username === 'admin' && password === 'password123') {
+                alert('Login successful!');
+                // Arahkan ke halaman dashboard setelah login berhasil
+                window.location.href = '/dashboard';
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
 </body>
+
 </html>
